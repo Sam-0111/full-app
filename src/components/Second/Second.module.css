@@ -1,0 +1,336 @@
+* {
+	font-family: Roboto, serif;
+	box-sizing: border-box;
+}
+
+.secondNavbar {
+	width: 300px;
+	/* height: 100vh; */
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	bottom: 0;
+}
+@media (min-width: 767px) {
+	.secondNavbar {
+		display: none;
+	}
+}
+.secondNavbar.active {
+	animation: visible 0.5s forwards linear;
+}
+
+@keyframes visible {
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+.closeButtonArea {
+	padding: 35px 0;
+	margin: 0 15px;
+	border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+
+.secondNavItem.dropdown,
+.secondNavItem {
+	padding: 10px 20px 10px 15px;
+	font-size: 12px;
+	font-weight: 500;
+	border-bottom: 1px solid rgb(234, 234, 234);
+	/* display: flex; */
+	align-items: center;
+	justify-content: space-between;
+	line-height: 30px;
+}
+
+.dropdownBox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.secondNavItem {
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.secondNavItem .icon {
+	/* padding: 5px; */
+	border-left: 1px solid rgba(99, 99, 99, 0.393);
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	padding-left: 10px;
+}
+.secondNavItem.dropdown{
+	padding: 0 20px;
+}
+
+.secondBox {
+	height: 90vh;
+	margin-bottom: 1000px;
+}
+
+.secondScroll {
+	height: 100vh;
+	padding-bottom: 100px;
+
+	overflow-y: auto;
+}
+
+.dropdownSubmenu {
+	animation: anim 0.4s forwards linear;
+	transition: transform 0.5s;
+	z-index: -1;
+	transition: height 0.5s !important;
+}
+
+@keyframes anim {
+	0% {
+		transform: translateY(40px);
+		/* height: 0; */
+	}
+
+	100% {
+		transform: translateY(0px);
+		/* height: auto; */
+	}
+}
+
+.rotate {
+	transform: rotate(180deg);
+}
+
+.hidden {
+	transition: height 0.5s;
+	height: 0;
+	display: none;
+}
+
+.closeButton {
+	float: right;
+	/* margin-bottom: 10px; */
+}
+
+.sub {
+	border-left: 1px solid;
+
+	padding-left: 20px;
+	margin-left: 10px;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(1) {
+	transform: translateY(20px);
+	animation: items1 1s forwards 0s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(2) {
+	transform: translateY(20px);
+
+	animation: items2 1s forwards 0.1s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(3) {
+	transform: translateY(20px);
+
+	animation: items3 1s forwards 0.2s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(4) {
+	transform: translateY(20px);
+
+	animation: items4 1s forwards 0.3s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(5) {
+	transform: translateY(20px);
+
+	animation: items5 1s forwards 0.4s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(6) {
+	animation: items6 1s forwards 0.5s linear;
+	transform: translateY(20px);
+}
+
+.secondNavbar.active .secondNavItem:nth-child(7) {
+	transform: translateY(20px);
+
+	animation: items7 1s forwards 0.6s linear;
+}
+
+.secondNavbar.active .secondNavItem:nth-child(8) {
+	transform: translateY(20px);
+
+	animation: items8 1s forwards 0.8s linear;
+}
+
+@keyframes items1 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items2 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items3 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items4 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items5 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items6 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items7 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes items8 {
+	0% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.subSubmenuArrow {
+	float: right;
+	border: 1px solid rgb(127, 114, 114);
+	border-radius: 100%;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	transform: translateX(5px);
+}
+
+.loginText {
+	margin-top: 30px;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.contacts {
+	width: 90%;
+	/* border: 1px solid; */
+	margin: 0 auto;
+	display: flex;
+	margin-top: 20px;
+}
+
+.contacts > div {
+	flex: 1;
+	border: 1px solid rgb(218, 218, 218);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 0;
+}
+.sub {
+	height: 0;
+	display: none;
+	background: #fff;
+}
+.sub.active {
+	transition: 0.5s;
+	display: block;
+	animation: subOne 0.3s forwards;
+}
+
+@keyframes subOne {
+	0% {
+		height: 0;
+		opacity: 0;
+		display: block;
+	}
+	100% {
+		opacity: 1;
+		height: auto;
+	}
+}
+.dropdownSubmenu {
+	/* overflow: hidden; */
+	background-color: #fff;
+}
+.dropdownWrap > span {
+	position: relative;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.dropdownBox > div {
+	margin: 10px 0;
+
+
+}
+.icon{
+	/* background-color: red !important; */
+	
+}

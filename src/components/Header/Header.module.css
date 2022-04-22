@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@700&family=Roboto&display=swap');
+
+* {
+  font-family: Roboto;
+}
+body {
+  background: red;
+  height: 320vh;
+}
+.headerMain {
+  width: 100%;
+  padding: 0 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.headerFixed {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  animation: fixed-header 0.8s forwards;
+}
+
+.headerMain .headerFixed .headerMainSearch {
+  color: black;
+}
+
+@keyframes fixed-header {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.headerMainWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+  /* margin: 0px; */
+  line-height: 50px;
+}
+
+.headerMainLogo {
+  padding: 0 0;
+}
+
+.headerMainSearch,
+.headerMainUserBtns {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+.headerMain.headerFixed .headerMainUserBtns {
+  color: black;
+}
+
+.headerMainUserBtns > :not(:last-child) {
+  margin-right: 25px;
+}
+
+.iconMobile {
+  display: none;
+}
+
+.iconDesktop {
+  display: inline;
+}
+.cursorPointer {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .headerMainLogo > img {
+    height: 25px;
+    
+  }
+
+  .headerMainWrapper {
+    padding: 10px 20px;
+  }
+
+  .iconMobile {
+    display: inline;
+  }
+  .iconDesktop {
+    display: none;
+  }
+}

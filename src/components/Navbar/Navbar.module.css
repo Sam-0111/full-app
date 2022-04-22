@@ -1,0 +1,310 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+ul,
+li {
+  list-style: none;
+}
+
+span {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  /* color: #fff; */
+  letter-spacing: 2px;
+  overflow: hidden !important;
+}
+
+.headerNavbar {
+  width: 100%;
+  padding: 0 15px;
+  font-family: 'Roboto', serif;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .headerNavbar {
+    display: none;
+  }
+}
+.headerNavbarList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  /* margin-top: 10px; */
+  padding-bottom: 20px;
+}
+
+.headerNavbarListItem {
+  line-height: 120%;
+  position: relative;
+  padding: 5px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  height: 30px;
+}
+
+.headerNavbarListItem > .link > .linkItem {
+  color: rgb(255, 255, 255);
+}
+.headerNavbarListItem > .link > .linkItem.active {
+  color: rgb(0, 0, 0);
+}
+.headerNavbarListItem > ul {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  /* z-index: 2; */
+  text-align: left;
+  min-width: 100%;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  display: none;
+  transform: translateY(-15px);
+  transition: 0.2s;
+}
+
+/* .headerNavbarListItem > div > a {
+  color: rgb(255, 255, 255) ;
+} */
+
+.headerNavbarListItem .submenu {
+  transform: translateY(5px);
+}
+
+.headerNavbarListItem:hover > ul {
+  /* transform: translateY(0); */
+  animation: submenu 0.5s forwards;
+}
+
+.headerNavbarListItem > ul > li {
+  letter-spacing: 0 !important;
+  display: block;
+}
+.headerNavbarListItem.hasSubmenu:hover{
+  background-color: #fff
+}
+.headerNavbarListItem.hasSubmenu:hover > .link > .linkItem{
+  color: #000;
+}
+.headerNavbarListItem:hover > ul {
+  width: max-content;
+  display: block;
+}
+
+.headerNavbarListItem > .link {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.headerNavbarListItem > .link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: -100%;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.7s ease-in-out;
+  z-index: 10;
+}
+.headerNavbarListItem.hasSubmenu > .link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: -100%;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.7s ease-in-out;
+  z-index: 10;
+}
+.headerNavbarListItem.active > .link::before{
+  background-color: rgb(0, 0, 0);
+
+}
+
+.headerMain.headerFixed .headerNavbarListItem > .link::before {
+  background: #000;
+}
+.headerNavbarListItem:hover > .link::before {
+  animation: before 0.7s forwards;
+}
+
+@keyframes before {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.headerNavbarListItem .hasSubmenu:hover {
+  background-color: #fff;
+}
+
+.headerNavbarListItem .hasSubmenu > .link::before {
+  background-color: #000;
+}
+
+.headerNavbarListItem .hasSubmenu:hover a {
+  color: #000;
+}
+
+.megamenu {
+  position: static;
+}
+
+.megamenu > .submenu {
+  position: absolute;
+  left: 0;
+  min-width: 100%;
+  background: #fff;
+  /* display: flex; */
+}
+
+.megamenu:hover > .submenu {
+  transform: translateY(-3px);
+  display: flex;
+}
+
+.listItemSubmenu {
+  width: 100%;
+  padding: 30px 0;
+  display: none;
+  z-index: 10;
+  transition: 1s;
+  z-index: 0;
+  box-shadow: 0px 10px 20px rgb(0 0 0 / 9%);
+}
+
+.listItemSubmenu  {
+  z-index: 5;
+  transition: all 0.5s step-end;
+  overflow: hidden;
+}
+
+.megamenu:hover .listItemSubmenu  {
+  display: block;
+  transition: all 1s ease-in;
+  /* z-index: 0; */
+}
+
+.submenuItems {
+  width: 45%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submenuItems > .submenuItem {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.submenuItem {
+  text-align-last: left;
+  line-height: 150%;
+  vertical-align: top;
+  transition: transform 0.5s ease;
+}
+
+.submenuItem > li {
+  line-height: 200%;
+}
+
+.submenuItem > h3 {
+  line-height: 200%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.submenuItem--title {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.megamenu:hover .submenuItems > .submenuItem:nth-child(1) {
+  transform: translateY(30px);
+  animation: sss 1s forwards alternate;
+  /* animation-delay: .3s; */
+}
+
+.megamenu:hover .submenuItems > .submenuItem:nth-child(2) {
+  animation: ddd 1s backwards 0.1s alternate;
+}
+
+.megamenu:hover .submenuItems > .submenuItem:nth-child(3) {
+  animation: fff 1s backwards 0.2s alternate;
+}
+
+.submenuSubitem {
+  padding: 15px 5px 5px 0;
+  font-size: 13px;
+  align-self: start;
+}
+
+.submenuSubitem > a {
+  font-size: 16px;
+  padding: 15px 0;
+  font-weight: 500;
+  letter-spacing: 1px !important;
+}
+
+@keyframes sss {
+  0% {
+    transform: translateY(40px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ddd {
+  0% {
+    transform: translateY(40px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fff {
+  0% {
+    transform: translateY(40px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.listItem:hover .simpleSubmenu {
+  animation: simpleSub 0.5s forwards;
+}
+
+@keyframes simpleSub {
+  0% {
+    top: 30px;
+  }
+
+  100% {
+  }
+}
+.submenuItemTitle{
+  font-size: 8px;
+}
